@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ink_r
+  - hand_r
+  - Ink_l
+  - hand_l
+  - InteractableObj
+  - dynamicMeshDM
+  - Item
+  - PlaneGeneratedByARCore
+  - UI
+  - endpoint
+  - Egg
+  - Chicken
+  - Egg_prefab
+  - seed
+  - Pokemon
+  - Hand
+  - ARPlane
+  - cross
+  - particle_gameobjects
+  - simObj
+  - simCube
+  - fingers
+  - pokeballsound
+  - throwaudio
+  - target
+  - pika_plane
+  - hand_r_parent
+  - DemoController
+  - LogText
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PointCloud
+  - Dart
+  - NoIllumination
+  - Interactable
+  - DetectedPlane
+  - particle_attractor
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Player_Body
+  - Player_Hit
+  - Boxer_Body
+  - Boxer_Hit
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
