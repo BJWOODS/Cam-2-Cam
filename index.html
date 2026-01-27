@@ -5,24 +5,79 @@
   <title>Cam-2-Cam Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 40px;
+      font-family: "Anek Latin", Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 40px auto;
+      padding: 0 16px;
       line-height: 1.6;
       color: #111;
       max-width: 900px;
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 0.2em;
+      margin-bottom: 0.25em;
+      letter-spacing: 0.2px;
+    }
+
+    .logos {
+      margin: 18px auto 8px;
+    }
+
+    .logos img {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .authors {
+      margin: 22px auto 6px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px 12px;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .author {
+      max-width: 260px;
+    }
+
+    .author .name {
+      font-weight: 750;
+      font-size: 1.05em;
+      margin-bottom: 2px;
+    }
+
+    .author .affil {
+      font-size: 0.95em;
+      color: #222;
+    }
+
+    .author .location {
+      font-size: 0.9em;
+      color: #444;
+    }
+
+    .author a {
+      display: inline-block;
+      font-size: 0.9em;
+      word-break: break-word;
     }
 
     .video-container {
       position: relative;
       width: 100%;
+      max-width: 900px;
       padding-top: 56.25%; /* 16:9 aspect ratio */
-      margin: 24px 0;
+      margin: 24px auto;
     }
 
     .video-container iframe {
@@ -32,6 +87,26 @@
       width: 100%;
       height: 100%;
       border: none;
+    }
+
+    .video-fallback {
+      margin-top: 10px;
+    }
+
+    .watch-btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #f7f7f7;
+      color: #111;
+      font-size: 0.95em;
+    }
+
+    .note {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 6px;
     }
 
     .caption {
@@ -48,10 +123,70 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .pub-link {
+      margin: 12px auto 6px;
+      font-size: 1.02em;
+    }
+
+    .pub-link a {
+      font-weight: 700;
+    }
+
+    /* Bottom "toy" animation */
+    .toy-wrap {
+      margin: 44px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #eee;
+    }
+
+    .toy-track {
+      position: relative;
+      height: 160px;
+      overflow: visible;
+    }
+
+    .toy-phone {
+      position: absolute;
+      left: -44px;
+      bottom: 0px;
+      width: 72px;
+      height: auto;
+      filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
+
+      animation: moveAcross 6.2s ease-in-out infinite alternate,
+                 bob 1.3s ease-in-out infinite;
+    }
+
+    @keyframes moveAcross {
+      from { left: -44px; }
+      to { left: calc(100% - 72px); }
+    }
+
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .toy-caption {
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #555;
+    }
+
+    @media (max-width: 760px) {
+      .authors {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div class="logos">
+    <img src="Cam2Cam_Author_Logos.png" alt="Institutional logos" />
+  </div>
+
   <h1>Cam-2-Cam</h1>
 
   <p>
@@ -60,14 +195,70 @@
     rear-facing camera views as part of a unified spatial interaction.
   </p>
 
+  <div class="pub-link">
+    <strong>
+      Read the full publication here:
+      <a href="https://dl.acm.org/doi/10.1145/3694907.3765919" target="_blank" rel="noopener noreferrer">https://dl.acm.org/doi/10.1145/3694907.3765919</a>
+    </strong>
+  </div>
+
+  <section class="authors" aria-label="Authors">
+    <div class="author">
+      <div class="name">Brandon Woodard</div>
+      <div class="affil">Brown University</div>
+      <div class="location">Providence, Rhode Island, USA</div>
+
+    </div>
+
+    <div class="author">
+      <div class="name">Melvin He</div>
+      <div class="affil">Brown University</div>
+      <div class="location">Providence, Rhode Island, USA</div>
+
+    </div>
+
+    <div class="author">
+      <div class="name">Mose Sakashita</div>
+      <div class="affil">Fujitsu Research</div>
+      <div class="location">Pittsburgh, Pennsylvania, USA</div>
+
+    </div>
+
+    <div class="author">
+      <div class="name">Jing Qian</div>
+      <div class="affil">New York University</div>
+      <div class="location">Brooklyn, New York, USA</div>
+    </div>
+
+    <div class="author">
+      <div class="name">Zainab Iftikhar</div>
+      <div class="affil">Brown University</div>
+      <div class="location">Providence, Rhode Island, USA</div>
+    </div>
+
+    <div class="author">
+      <div class="name">Joseph LaViola</div>
+      <div class="affil">University of Central Florida</div>
+      <div class="location">Orlando, Florida, USA</div>
+
+    </div>
+  </section>
+
   <div class="video-container">
     <iframe
-      src="https://www.youtube.com/embed/kYwGxZIPk48"
+      src="https://www.youtube-nocookie.com/embed/kYwGxZIPk48?rel=0&modestbranding=1&playsinline=1"
       title="Cam-2-Cam Demo"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen>
     </iframe>
   </div>
+
+  <div class="video-fallback">
+    <a class="watch-btn" href="https://www.youtube.com/watch?v=kYwGxZIPk48" target="_blank" rel="noopener noreferrer">
+      Watch on YouTube
+    </a>
+   
 
   <div class="caption">
     Video demo illustrating the Cam-2-Cam interaction concept and example applications.
@@ -79,6 +270,12 @@
       GitHub repository
     </a>
   </p>
+
+  <div class="toy-wrap" aria-label="Interactive graphic">
+    <div class="toy-track" aria-hidden="true">
+      <img class="toy-phone" src="smartphone.svg" alt="" />
+    </div>
+  </div>
+
 </body>
 </html>
-
