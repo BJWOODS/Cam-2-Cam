@@ -24,28 +24,3 @@ For the **authoritative license terms and the exact CC variant that applies to t
 https://dl.acm.org/doi/10.1145/3694907.3765919
 
 If you reuse content from this project page (e.g., the website, images, or other assets), please likewise include a citation or attribution back to this project and the publication.
-
-## Run locally
-
-If you open `index.html` directly via `file://`, some browsers may block the embedded YouTube player. Serving the page over `http://` avoids that.
-
-With Python 3 installed:
-
-```bash
-cd /Users/bwoodard/Desktop/Development/Cam-2-Cam
-python3 -m http.server 8000
-```
-
-Then open:
-- http://localhost:8000/
-
-## Troubleshooting
-
-### YouTube embed shows an error
-
-Common causes:
-- The page is opened via `file://` instead of from a web server
-- Browser privacy/tracking settings block third-party iframes
-- The video owner has disabled embedding
-
-Use the “Watch on YouTube” link as a fallback.
