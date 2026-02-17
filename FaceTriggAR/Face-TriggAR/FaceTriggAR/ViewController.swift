@@ -41,7 +41,6 @@ class ViewController: UIViewController, ARSessionDelegate {
     enum AppState {
         case ready
         case zoomedIn
-//        case reloadNeeded
     }
 
     var appState: AppState = .ready
@@ -88,7 +87,7 @@ class ViewController: UIViewController, ARSessionDelegate {
         UIApplication.shared.isIdleTimerDisabled = true
 
         // Commenting out tap gesture to shoot
-//        arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
+        //arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(recognizer:))))
 
         // Add this code in viewDidLoad(), after initializing the configuration
         if let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil) {
@@ -529,8 +528,7 @@ class ViewController: UIViewController, ARSessionDelegate {
             filter: .sensor // Adjust filter as needed
         )
 
-        // Enable physics debugging
-//        arView.debugOptions.insert(.showPhysics)
+
 
         return targetEntity
     }
